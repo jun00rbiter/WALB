@@ -15,28 +15,30 @@
         <table id="settings" class="fluid">
             <tr><td class="align-left">
                 <form id="loc" method="post" accept-charset="utf-8">
-                    <label class="text-bold"> Location: </label>
-                    <input type="hidden" id="zoom" name="zoom" value="<?php echo $settings['zoom'] ?>">
-                    <input id="lat" type="text" name="latitude" class="form-control text-red text-bold" placeholder="Latitude..." value="<?php echo $settings['latitude']?>"/>
-                    <input id="lng" type="text" name="longitude" class="form-control text-red text-bold" placeholder="Longitude..." value="<?php echo $settings['longitude']?>"/>
-
-                    <label for="text">Max Speed: </label>
-                    <select name="speed">
-                        <?php $speed=$settings['speed']?>
-                        <option value="40"   <?php if($speed==40)   echo selected ?>>5Km</option>
-                        <option value="80"   <?php if($speed==80)   echo selected ?>>10Km</option>
-                        <option value="400"  <?php if($speed==400)  echo selected ?>>50Km</option>
-                        <option value="800"  <?php if($speed==800)  echo selected ?>>100Km</option>
-                        <option value="1600" <?php if($speed==1600) echo selected ?>>200Km</option>
-                        <option value="2400" <?php if($speed==2400) echo selected ?>>300Km</option>
-                    </select>
-
+                    <div style="float:left;">
+                        <label class="text-bold"> Location: </label>
+                        <input type="hidden" id="zoom" name="zoom" value="<?php echo $settings['zoom'] ?>">
+                        <input id="lat" type="text" name="latitude" class="form-control text-red text-bold" placeholder="Latitude..." value="<?php echo $settings['latitude']?>"/>
+                        <input id="lng" type="text" name="longitude" class="form-control text-red text-bold" placeholder="Longitude..." value="<?php echo $settings['longitude']?>"/>
+                    </div>
+                    <div style="float:right;">
+                        <label  class="text-bold" for="text">Max Speed: </label>
+                        <select name="speed" class="form-control">
+                            <?php $speed=$settings['speed']?>
+                            <option value="40"   <?php if($speed==40)   echo selected ?>>5Km</option>
+                            <option value="80"   <?php if($speed==80)   echo selected ?>>10Km</option>
+                            <option value="400"  <?php if($speed==400)  echo selected ?>>50Km</option>
+                            <option value="800"  <?php if($speed==800)  echo selected ?>>100Km</option>
+                            <option value="1600" <?php if($speed==1600) echo selected ?>>200Km</option>
+                            <option value="2400" <?php if($speed==2400) echo selected ?>>300Km</option>
+                        </select>
+                    </div>
                     <!--
                     <input id="sub" type="button" value="Submit" class="form-control form-button text-bold"
                     onClick="sendLocation('http://<?php echo $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']?>','#loc');return false;">
                     -->
                 </form>
-            </td><td class="align-right">
+            </td><td class="align-right" width="150px">
                 <form id="SIM" method="POST" action="LatLon.php">
                     <input id="start" type="submit" value="SimStart" name="start" class="form-control form-button text-red text-bold">
                     <input id="stop" type="submit" value="SimStop" name="stop" class="form-control form-button text-red text-bold">

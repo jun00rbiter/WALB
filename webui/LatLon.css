@@ -17,11 +17,14 @@ body{
 .align-right{
     text-align: right;
 }
+.align-center{
+    text-align: center;
+}
 .inline-group{
     float: left;
 }
 .container{
-    padding: 20px;
+    padding: 5px;
 }
 .form-control{
     font-size: 12px;

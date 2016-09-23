@@ -68,7 +68,7 @@ function panCenter(){
     var th = parseInt(jQuery('#settings').css('height'));
     var h = window.innerHeight;
     jQuery('#map').css('width', w);
-    jQuery('#map').css('height', h-th-40); //container paddin 20px
+    jQuery('#map').css('height', h-th-10); //container paddin 5px
     var latitude = parseFloat(document.getElementById('lat').value);
     var longitude = parseFloat(document.getElementById('lng').value);
     var myLatlng = new google.maps.LatLng(latitude, longitude);
